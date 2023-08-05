@@ -16,7 +16,10 @@ public class AdvancedBooleanLogic {
      * @return false if b1 and b2 are both true. Otherwise, return true.
      */
     public boolean returnNotBoth(boolean b1, boolean b2){
-        return false;
+
+        // !(b1 && b2) == !b1 || !b2 via distributive property
+
+        return !(b1 && b2);
     }
     /**
      * b1 OR b2, BUT NOT BOTH
@@ -25,7 +28,11 @@ public class AdvancedBooleanLogic {
      * @return true if either b1 or b2 is true, but false if they are both true or both false.
      */
     public boolean returnExclusiveOr(boolean b1, boolean b2){
-        return false;
+        // can be done using exlusive or
+        // can also be done using multiple boolean expressions
+        
+        //return (b1 && !b2) || (!b1 && b2); 
+        return b1 ^ b2;
     }
 
     /**
@@ -35,6 +42,9 @@ public class AdvancedBooleanLogic {
      * @return true if neither b1 nor b2 are true. Return false if either b1 or b2 is true.
      */
     public boolean returnNeitherNor(boolean b1, boolean b2){
-        return false;
+
+        // !(b1 || b2) == !b1 && !b2 // by distributive property
+        
+        return !(b1 || b2);
     }
 }
